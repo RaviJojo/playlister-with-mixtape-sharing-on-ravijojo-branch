@@ -14,6 +14,8 @@ PlaylisterApp::Application.routes.draw do
   
   post '/sessions' => 'sessions#create'
 
+  post '/mixtapes/:id/share' => 'mixtapes#share', :as => :share_mixtape
+
   root 'songs#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

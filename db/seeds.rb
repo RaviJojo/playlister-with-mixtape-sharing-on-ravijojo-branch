@@ -18,5 +18,12 @@ summer_hits.mixtape_songs.create(:song => we_cant_stop)
 dj = User.create(:email => "dj@flatironschool.com", :password => 'test', :password_confirmation => 'test')
 listener = User.create(:email => "listener@flatironschool.com", :password => 'test', :password_confirmation => 'test')
 
+ray = User.create(:email => "ray@ray.com", :password => "rayray", :password_confirmation => "rayray")
+billie = User.create(:email => "billie@ray.com", :password => "rayray", :password_confirmation => "rayray")
+jonnie = User.create(:email => "jonnie@ray.com", :password => "rayray", :password_confirmation => "rayray")
+tiffany = User.create(:email => "tiffany@ray.com", :password => "rayray", :password_confirmation => "rayray")
+george = User.create(:email => "george@ray.com", :password => "rayray", :password_confirmation => "rayray")
+
+
 UserMixtape.create(:user => dj, :mixtape => summer_hits)
 summer_hits.user_mixtapes.create(:user => listener)

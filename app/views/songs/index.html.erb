@@ -1,3 +1,9 @@
+<% if logged_in? && !@user.mixtapes.empty? %>
+<%= render 'user_mixtapes' %>
+<% else %>
+<h3> no mixtapes. <%= link_to "want to make one?", new_mixtape_path %>
+<% end %>
+
 <h1>Listing songs</h1>
 
 <ol>
@@ -10,7 +16,7 @@
   <%# end %>
 
   <%#= render :collection => @songs, :partial => 'song_li' %>
-  <%= render :collection => @songs, :partial => 'song_li', :as => :song %>
+  <%= render :collection => @songs, :partial => 'song', :as => :song %>
 
   <%#= render @songs %>
 </ol>

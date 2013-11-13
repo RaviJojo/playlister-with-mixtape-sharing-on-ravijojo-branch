@@ -13,4 +13,14 @@ class Mixtape < ActiveRecord::Base
     end
   end
 
+  def add_user(user)
+    if user.mixtapes.include?(self)
+      return false
+    else
+      self.user_mixtapes.build(:user => user)
+      return true
+    end
+  end
+
+
 end

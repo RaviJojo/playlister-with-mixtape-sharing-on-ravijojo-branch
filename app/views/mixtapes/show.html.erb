@@ -1,4 +1,7 @@
 <h1><%= @mixtape.name %></h1>
+<p><font color="green"><%= notice if notice %></font></p>
+
+
 
 <ol>
   <%= render @mixtape.songs %>
@@ -7,3 +10,17 @@
 <p>
   <%= link_to "Add a Song to This Mixtape", new_mixtape_song_path(@mixtape) %>
 </p>
+
+This mixtape belongs to these users: 
+<ul>
+<% @mixtape.users.each do |user| %>
+  <li><%= user.email %></li>
+  <% end %>
+</ul>
+
+<p>
+  Share this mixtape!
+</p>
+<%= form_tag(share_mixtape_path) %>
+<%= select_tag 'user_id', options_for_select(@users.collect { |user| [user.email, user.id]}) %>
+<%= submit_tag "Share!" %>
